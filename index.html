@@ -8,7 +8,7 @@
 <body>
 
 <div class="container">
-    <h1>お気に入りアーティスト<br>好きな曲ランキング</h1>
+    <h1 id="artistTitle">FRUITS ZIPPER<br>好きな曲ランキング</h1>
 
     <h2>アーティストを選ぶ</h2>
     <select id="artistSelect" onchange="changeArtist()">
@@ -18,15 +18,13 @@
     </select>
 
     <h2>アーティスト紹介</h2>
-    <p id="artistInfo">
-        私の好きなアーティストは FRUITS ZIPPER です。可愛さと元気いっぱいのパフォーマンスが魅力のアイドルグループです！
-    </p>
+    <img id="artistImage" src="fruits.png" alt="アーティスト画像">
+    <p id="artistInfo"></p>
 
     <h2>ランキング TOP3</h2>
     <ol id="rankingList"></ol>
 
     <button onclick="showMessage()">おすすめポイントを見る</button>
-
     <p id="message"></p>
 </div>
 
