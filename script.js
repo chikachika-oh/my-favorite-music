@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
             songs: [
                 { name: "完璧主義で☆", desc:"元気になれる明るい曲", url:"https://youtu.be/pFVaqv7pb1k?si=USsGRI_z9ipBzBZw&t=215" },
                 { name: "フルーツバスケット", desc:"かわいいメロディが特徴", url:"https://youtu.be/bRRPqGRguKo?si=sq-cVwGiJlRWBs6p&t=70" },
-                { name: "君と目が合った時", desc:"恋する気持ちを歌った曲", url:"https://youtu.be/T55SROZ5S78?si=D4FhaMAOVFcRk5VC&t=76" }
+                { name: "君と目が合った時", desc:"メガネがテーマの新曲", url:"https://youtu.be/T55SROZ5S78?si=D4FhaMAOVFcRk5VC&t=76" }
             ]
         },
         fujii: {
