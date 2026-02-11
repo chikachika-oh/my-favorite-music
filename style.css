@@ -1,64 +1,80 @@
+/* 全体の基本設定 */
 body {
-    font-family: "Verdana", sans-serif;
     margin: 0;
     padding: 0;
-    background: #f5f5f5;
+    font-family: "Verdana", sans-serif;
     text-align: center;
+    min-height: 100vh;
+
+    /* 流れるグラデーション背景 */
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: white;
 }
 
+/* グラデーションアニメーション */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 見出し */
 h1 {
-    margin: 20px 0;
-    color: #ff4fa3;
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    margin: 30px 0;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
+/* アーティストセクション */
 .artistSection {
-    background-color: white;
-    margin: 30px auto;
-    padding: 30px;
-    max-width: 700px;
-    border-radius: 20px;
-    box-shadow: 0 0 25px rgba(0,0,0,0.3);
+    margin: 50px auto;
+    max-width: 600px;
+    padding: 20px;
+    background: rgba(0,0,0,0.3); /* 半透明で背景が透ける */
+    border-radius: 15px;
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
+    transform: translateY(50px);
+    transition: all 1s ease;
 }
 
+/* スクロールで表示されるとき */
 .artistSection.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
+/* アーティスト画像 */
 .artistSection img {
-    width: 200px;
-    border-radius: 15px;
-    margin: 15px 0;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
 }
 
-ol {
-    list-style: none;
-    padding-left: 0;
+/* ランキングリスト */
+.rankingList {
+    list-style: none; /* 数字を消す */
+    padding: 0;
 }
 
-li {
-    margin: 10px 0;
-}
+/* ランク色分け */
+.rank1 { color: gold; font-weight: bold; }
+.rank2 { color: silver; font-weight: bold; }
+.rank3 { color: #cd7f32; font-weight: bold; }
 
-li a {
+/* 曲リンク */
+.rankingList li a {
     text-decoration: none;
-    color: #333;
-    transition: color 0.3s, text-shadow 0.3s;
+    color: white;
+    display: block;
+    margin: 8px 0;
+    transition: transform 0.2s;
 }
 
-li a:hover {
-    color: #ff4fa3;
-    text-shadow: 0 0 8px #ff4fa3;
+.rankingList li a:hover {
+    transform: scale(1.05);
+    color: #ffe;
 }
-
-/* ランキング色 */
-li.rank1 a { color: #ff3b3b; font-weight: bold; }
-li.rank2 a { color: #3b8eff; font-weight: bold; }
-li.rank3 a { color: #3bff57; font-weight: bold; }
-
-/* ★アイコン */
-.star { color: gold; margin-right: 5px; }
