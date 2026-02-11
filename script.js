@@ -29,25 +29,21 @@ document.addEventListener("DOMContentLoaded", function() {
     const artistSelect = document.getElementById("artistSelect");
     const showMessageBtn = document.getElementById("showMessageBtn");
 
-    // 初期表示
     displayArtist(currentArtist);
 
-    // アーティスト切替
     artistSelect.addEventListener("change", function() {
         currentArtist = this.value;
         displayArtist(currentArtist);
     });
 
-    // おすすめポイント表示
     showMessageBtn.addEventListener("click", function() {
         const message = document.getElementById("message");
         message.textContent = artists[currentArtist].message;
         message.classList.remove("fade-in");
-        void message.offsetWidth; // 再アニメーションのための trick
+        void message.offsetWidth;
         message.classList.add("fade-in");
     });
 
-    // 表示関数
     function displayArtist(artistKey) {
         const artist = artists[artistKey];
         document.getElementById("artistTitle").innerHTML = `${artist.name}<br>好きな曲ランキング`;
@@ -55,9 +51,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const list = document.getElementById("rankingList");
         list.innerHTML = "";
+
         artist.songs.forEach((song, i) => {
             const li = document.createElement("li");
             li.textContent = `${i + 1}位：${song}`;
+            li.style.animationDelay = `${i * 0.3}s`; // 順番にフェードイン
             list.appendChild(li);
         });
 
