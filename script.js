@@ -5,18 +5,21 @@ const artists = {
         info: "可愛さと元気いっぱいのパフォーマンスが魅力のアイドルグループです！",
         songs: ["完璧主義で☆", "フルーツバスケット", "君と目が合った時"],
         message: "どの曲も元気になれる曲ですが、特に『完璧主義で☆』は明るくて前向きな気持ちになれる最高の1曲です！"
+        image: "fruits.png"
     },
     fujii: {
         name: "藤井風",
         info: "独特の歌声とピアノ演奏で人気のシンガーソングライターです。",
         songs: ["帰ろう", "優しさ", "きらり"],
         message: "藤井風の曲はどれも心に響きます。特に『帰ろう』は温かく感動的な名曲です！"
+        image: "fujii.png"
     },
     oneokrock: {
         name: "ONE OK ROCK",
         info: "国内外で人気のロックバンド。力強い歌声とエモーショナルな曲が魅力です。",
         songs: ["Wherever you are", "完全感覚Dreamer", "Mighty Long Fall"],
         message: "ONE OK ROCKの曲は力強く、特に『Wherever you are』は感情を揺さぶられる名曲です！"
+        image: "oneokrock.png"
     }
 };
 
@@ -27,6 +30,7 @@ displayArtist(currentArtist);
 // 表示関数
 function displayArtist(artistKey) {
     const artist = artists[artistKey];
+    document.getElementById("artistImage").src = artist.image;
     document.querySelector("h1").innerHTML = `${artist.name}<br>好きな曲ランキング`;
     document.getElementById("artistInfo").textContent = artist.info;
 
