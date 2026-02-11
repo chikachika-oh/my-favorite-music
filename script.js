@@ -2,23 +2,23 @@ document.addEventListener("DOMContentLoaded", function() {
     const artistsData = {
         fruits: {
             songs: [
-                { name: "完璧主義で☆", desc:"元気になれる明るい曲" },
-                { name: "フルーツバスケット", desc:"かわいいメロディが特徴" },
-                { name: "君と目が合った時", desc:"恋する気持ちを歌った曲" }
+                { name: "完璧主義で☆", desc:"元気になれる明るい曲", url:"https://youtu.be/pFVaqv7pb1k?si=USsGRI_z9ipBzBZw&t=215" },
+                { name: "フルーツバスケット", desc:"かわいいメロディが特徴", url:"" },
+                { name: "君と目が合った時", desc:"恋する気持ちを歌った曲", url:"" }
             ]
         },
         fujii: {
             songs: [
-                { name: "帰ろう", desc:"心温まるバラード" },
-                { name: "優しさ", desc:"優しいメロディが印象的" },
-                { name: "きらり", desc:"明るく元気なナンバー" }
+                { name: "帰ろう", desc:"心温まるバラード", url:"" },
+                { name: "優しさ", desc:"優しいメロディが印象的", url:"" },
+                { name: "きらり", desc:"明るく元気なナンバー", url:"" }
             ]
         },
         oneokrock: {
             songs: [
-                { name: "Wherever you are", desc:"力強いラブソング" },
-                { name: "完全感覚Dreamer", desc:"ロック魂が溢れる曲" },
-                { name: "Mighty Long Fall", desc:"感情揺さぶる名曲" }
+                { name: "Wherever you are", desc:"力強いラブソング", url:"" },
+                { name: "完全感覚Dreamer", desc:"ロック魂が溢れる曲", url:"" },
+                { name: "Mighty Long Fall", desc:"感情揺さぶる名曲", url:"" }
             ]
         }
     };
