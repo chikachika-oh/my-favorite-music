@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const artistsData = {
         fruits: {
             songs: [
-                { name: "完璧主義で☆", url: "https://youtu.be/pFVaqv7pb1k?si=nV5fA1S8p-51tEzT&t=217", desc:"元気になれる明るい曲" },
+                { name: "完璧主義で☆", url: "<iframe width="560" height="315" src="https://www.youtube.com/embed/pFVaqv7pb1k?si=lbOYGn7LacsEChoV&amp;start=220" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>", desc:"元気になれる明るい曲" },
                 { name: "フルーツバスケット", url: "https://youtu.be/bRRPqGRguKo?si=CgQmIYG-b60fwIye", desc:"かわいいメロディが特徴" },
                 { name: "君と目があったとき", url: "https://youtu.be/T55SROZ5S78?si=bnMqQ0DgUErWp2UQ&t=76", desc:"zoffとタイアップ" }
             ]
