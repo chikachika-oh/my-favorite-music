@@ -1,65 +1,71 @@
 document.addEventListener("DOMContentLoaded", function() {
-
-    const artists = {
+    const artistsData = {
         fruits: {
-            name: "FRUITS ZIPPER",
-            info: "可愛さと元気いっぱいのパフォーマンスが魅力のアイドルグループです！",
-            songs: ["完璧主義で☆", "フルーツバスケット", "君と目が合った時"],
-            message: "どの曲も元気になれる曲ですが、特に『完璧主義で☆』は明るくて前向きな気持ちになれる最高の1曲です！",
-            image: "fruits.png"
+            songs: [
+                { name: "完璧主義で☆", url: "https://www.youtube.com/watch?v=example1", desc:"元気になれる明るい曲" },
+                { name: "フルーツバスケット", url: "https://www.youtube.com/watch?v=example2", desc:"かわいいメロディが特徴" },
+                { name: "君と目が合った時", url: "https://www.youtube.com/watch?v=example3", desc:"恋する気持ちを歌った曲" }
+            ]
         },
         fujii: {
-            name: "藤井風",
-            info: "独特の歌声とピアノ演奏で人気のシンガーソングライターです。",
-            songs: ["帰ろう", "優しさ", "きらり"],
-            message: "藤井風の曲は心に響き、特に『帰ろう』は温かくて感動的な名曲です！",
-            image: "fujii.png"
+            songs: [
+                { name: "帰ろう", url: "https://www.youtube.com/watch?v=example4", desc:"心温まるバラード" },
+                { name: "優しさ", url: "https://www.youtube.com/watch?v=example5", desc:"優しいメロディが印象的" },
+                { name: "きらり", url: "https://www.youtube.com/watch?v=example6", desc:"明るく元気なナンバー" }
+            ]
         },
         oneokrock: {
-            name: "ONE OK ROCK",
-            info: "国内外で人気のロックバンド。力強い歌声とエモーショナルな曲が魅力です。",
-            songs: ["Wherever you are", "完全感覚Dreamer", "Mighty Long Fall"],
-            message: "ONE OK ROCKの力強い楽曲は聴く人の心を揺さぶります。特に『Wherever you are』は感情を込めて聴ける名曲です！",
-            image: "oneokrock.png"
+            songs: [
+                { name: "Wherever you are", url: "https://www.youtube.com/watch?v=example7", desc:"力強いラブソング" },
+                { name: "完全感覚Dreamer", url: "https://www.youtube.com/watch?v=example8", desc:"ロック魂が溢れる曲" },
+                { name: "Mighty Long Fall", url: "https://www.youtube.com/watch?v=example9", desc:"感情揺さぶる名曲" }
+            ]
         }
     };
 
-    let currentArtist = "fruits";
+    const liClasses = ["rank1","rank2","rank3"];
 
-    const artistSelect = document.getElementById("artistSelect");
-    const showMessageBtn = document.getElementById("showMessageBtn");
-
-    displayArtist(currentArtist);
-
-    artistSelect.addEventListener("change", function() {
-        currentArtist = this.value;
-        displayArtist(currentArtist);
-    });
-
-    showMessageBtn.addEventListener("click", function() {
-        const message = document.getElementById("message");
-        message.textContent = artists[currentArtist].message;
-        message.classList.remove("fade-in");
-        void message.offsetWidth;
-        message.classList.add("fade-in");
-    });
-
-    function displayArtist(artistKey) {
-        const artist = artists[artistKey];
-        document.getElementById("artistTitle").innerHTML = `${artist.name}<br>好きな曲ランキング`;
-        document.getElementById("artistInfo").textContent = artist.info;
-
-        const list = document.getElementById("rankingList");
-        list.innerHTML = "";
-
-        artist.songs.forEach((song, i) => {
+    document.querySelectorAll(".artistSection").forEach(section => {
+        const id = section.id;
+        const list = section.querySelector(".rankingList");
+        artistsData[id].songs.forEach((song, i)=>{
             const li = document.createElement("li");
-            li.textContent = `${i + 1}位：${song}`;
-            li.style.animationDelay = `${i * 0.3}s`; // 順番にフェードイン
+            if(i<3) li.classList.add(liClasses[i]);
+
+            const a = document.createElement("a");
+            a.href = "#";
+            a.innerHTML = `<span class="star">★</span>${i+1}位: ${song.name} <span class="play">▶︎</span> - ${song.desc}`;
+            a.addEventListener("click", function(e){
+                e.preventDefault();
+                const modal = document.getElementById("youtubeModal");
+                const player = document.getElementById("youtubePlayer");
+                player.src = song.url.replace("watch?v=", "embed/") + "?autoplay=1";
+                modal.style.display = "flex";
+            });
+            li.appendChild(a);
             list.appendChild(li);
         });
+    });
 
-        document.getElementById("artistImage").src = artist.image;
-        document.getElementById("message").textContent = "";
-    }
+    // モーダル閉じる
+    document.querySelector("#youtubeModal .closeBtn").addEventListener("click", function(){
+        const modal = document.getElementById("youtubeModal");
+        const player = document.getElementById("youtubePlayer");
+        player.src = "";
+        modal.style.display = "none";
+    });
+
+    // スクロールでフェードイン
+    const observer = new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+            if(entry.isIntersecting){
+                entry.target.classList.add("visible");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll(".artistSection").forEach(section=>{
+        observer.observe(section);
+    });
+
 });
