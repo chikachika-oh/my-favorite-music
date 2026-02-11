@@ -58,8 +58,3 @@ function changeArtist() {
     currentArtist = select.value;
     displayArtist(currentArtist);
 }
-/* olの自動番号を消す */
-ol {
-    list-style: none;
-    padding-left: 0;
-}
