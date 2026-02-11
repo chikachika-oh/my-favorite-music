@@ -9,16 +9,16 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         fujii: {
             songs: [
-                { name: "帰ろう", url: "https://www.youtube.com/watch?v=example4", desc:"心温まるバラード" },
-                { name: "優しさ", url: "https://www.youtube.com/watch?v=example5", desc:"優しいメロディが印象的" },
-                { name: "きらり", url: "https://www.youtube.com/watch?v=example6", desc:"明るく元気なナンバー" }
+                { name: "満ちていく", url: "https://youtu.be/ptiK8U4WlSc?si=S1sCJ-CCZ9JmmKwo&t=80", desc:"心温まるバラード" },
+                { name: "旅路", url: "https://youtu.be/29p8FvT_puU?si=0owXNpcktYMCzkno&t=92", desc:"どこか懐かしい気持ちに" },
+                { name: "きらり", url: "https://youtu.be/TcLLpZBWsck?si=jJ5wXTWIXI92OIvY&t=66", desc:"明るく元気なナンバー" }
             ]
         },
         oneokrock: {
             songs: [
-                { name: "Wherever you are", url: "https://www.youtube.com/watch?v=example7", desc:"力強いラブソング" },
-                { name: "完全感覚Dreamer", url: "https://www.youtube.com/watch?v=example8", desc:"ロック魂が溢れる曲" },
-                { name: "Mighty Long Fall", url: "https://www.youtube.com/watch?v=example9", desc:"感情揺さぶる名曲" }
+                { name: "Wherever you are", url: "https://youtu.be/qs4Q4cQxyU4?si=jcSb5op5lAlNye8P&t=177", desc:"力強いラブソング" },
+                { name: "完全感覚Dreamer", url: "https://youtu.be/xGbxsiBZGPI?si=pVBslNKEHR0lT974&t=72", desc:"ロック魂が溢れる曲" },
+                { name: "Mighty Long Fall", url: "https://youtu.be/UjZqcDYbvAE?si=i9TMXxNwS2BScd1h&t=53", desc:"感情揺さぶる名曲" }
             ]
         }
     };
