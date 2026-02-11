@@ -3,14 +3,14 @@ document.addEventListener("DOMContentLoaded", function() {
         fruits: {
             songs: [
                 { name: "完璧主義で☆", desc:"元気になれる明るい曲", url:"https://youtu.be/pFVaqv7pb1k?si=USsGRI_z9ipBzBZw&t=215" },
-                { name: "フルーツバスケット", desc:"かわいいメロディが特徴", url:"" },
-                { name: "君と目が合った時", desc:"恋する気持ちを歌った曲", url:"" }
+                { name: "フルーツバスケット", desc:"かわいいメロディが特徴", url:"https://youtu.be/bRRPqGRguKo?si=sq-cVwGiJlRWBs6p&t=70" },
+                { name: "君と目が合った時", desc:"恋する気持ちを歌った曲", url:"https://youtu.be/T55SROZ5S78?si=D4FhaMAOVFcRk5VC&t=76" }
             ]
         },
         fujii: {
             songs: [
-                { name: "帰ろう", desc:"心温まるバラード", url:"" },
-                { name: "優しさ", desc:"優しいメロディが印象的", url:"" },
+                { name: "満ちていく", desc:"心温まるバラード", url:"https://youtu.be/ptiK8U4WlSc?si=8bzmlJJITYI2mxcr&t=78" },
+                { name: "旅路", desc:"優しいメロディが印象的", url:"" },
                 { name: "きらり", desc:"明るく元気なナンバー", url:"" }
             ]
         },
@@ -33,7 +33,8 @@ document.addEventListener("DOMContentLoaded", function() {
             const li = document.createElement("li");
             if(i<3) li.classList.add(liClasses[i]);
             const a = document.createElement("a");
-            a.href = "#";
+            a.href = song.url;
+            a.target = "_blank";
             a.textContent = `${i+1}位: ${song.name} - ${song.desc}`;
             li.appendChild(a);
             list.appendChild(li);
