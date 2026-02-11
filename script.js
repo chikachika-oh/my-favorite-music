@@ -16,6 +16,11 @@ songs.forEach(function(song) {
 
 // ボタンを押したときの処理
 function showMessage() {
-    document.getElementById("message").textContent =
+    const message = document.getElementById("message");
+    message.textContent =
         "どの曲も元気になれる曲ですが、特に『完璧主義で☆』は明るくて前向きな気持ちになれる最高の1曲です！";
+
+    message.classList.remove("fade-in"); // 連続クリック対応
+    void message.offsetWidth; // アニメーション再実行のため
+    message.classList.add("fade-in");
 }
