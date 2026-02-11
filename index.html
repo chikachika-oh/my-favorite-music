@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <title>FRUITS ZIPPER 曲ランキング</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>好きなアーティスト曲ランキング</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
-    <h1>FRUITS ZIPPER<br>好きな曲ランキング</h1>
+    <h1>お気に入りアーティスト<br>好きな曲ランキング</h1>
+
+    <h2>アーティストを選ぶ</h2>
+    <select id="artistSelect" onchange="changeArtist()">
+        <option value="fruits">FRUITS ZIPPER</option>
+        <option value="fujii">藤井風</option>
+        <option value="oneokrock">ONE OK ROCK</option>
+    </select>
 
     <h2>アーティスト紹介</h2>
-    <p>
-        私の好きなアーティストは <strong>FRUITS ZIPPER</strong> です。<br>
-        可愛さと元気いっぱいのパフォーマンスが魅力のアイドルグループです！
+    <p id="artistInfo">
+        私の好きなアーティストは FRUITS ZIPPER です。可愛さと元気いっぱいのパフォーマンスが魅力のアイドルグループです！
     </p>
 
     <h2>ランキング TOP3</h2>
-    <ol id="rankingList">
-        <!-- JavaScriptで表示 -->
-    </ol>
+    <ol id="rankingList"></ol>
 
     <button onclick="showMessage()">おすすめポイントを見る</button>
 
